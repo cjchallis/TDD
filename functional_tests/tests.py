@@ -88,5 +88,4 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertIn('Buy milk', page_text)
     
         # Satisfied, they both go back to sleep
-        self.fail('Finish the test!')
 
