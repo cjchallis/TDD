@@ -1,4 +1,4 @@
-from django.test import StaticLiveServerTestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import unittest
@@ -35,9 +35,9 @@ class NewVisitorTest(StaticLiveServerTestCase):
         )
         
         # She notices the page title and header mention to-do lists
-        self.assertIn('To-Do', self.browser.title)
+        self.assertIn('To-do', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('To-Do', header_text)
+        self.assertIn('To-do', header_text)
         # She is invited to enter a to-do item straight away
         inputbox = self.browser.find_element_by_id('id_new_item')
         self.assertEqual(
